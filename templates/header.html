@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>
+        Ai-fin
+    </title>
+    <!--<link rel="stylesheet" href="/css/jquery.mobile-1.3.2.min.css" />-->
+    <link rel="stylesheet" href="/css/StyleSheet.css" />
+    <script src="/models/jquery-1.8.3.min.js"></script>
+    <!--<script src="/models/jquery.mobile-1.3.2.min.js"></script>-->
+    <script src="/models/ah.js"></script>
+</head>
+
+<body>
+
+    <nav>
+        <div><a title="home" href="/">home</a></div>
+        <div><a href="/archive" title="save" </a>archive</div>
+        <div><a title="tags" href="/tags">tags</a></div>
+        <div><a title="friend link" href="/links">links</a></div>
+        {% if user %}
+        <div><a href="/upload" title="upload">upload</a></div>
+        <div><a title="post" href="/post">Post</a></div>
+        <div><a title="logout" href="/logout">Logout</a></div>
+        {% else %}
+        <div><a title="login" href="/login">login</a></div>
+        <div><a title="register" href="/newuser">register</a></div>
+        {% endif %}
+
+
+    </nav>
+    <div>
+        <form action="/search" method="GET">
+            <input type="text" name="keyword" placeholder="Find..." class="search" />
+        </form>
+    </div>
+
+    {% block mainbody %}
+    <p>original</p>
+    {% endblock %}
+
+</body>
+
+</html>

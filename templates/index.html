@@ -1,0 +1,11 @@
+{% extends 'header.html' %} {% block mainbody %}
+<p> header </p>
+<h1>{{ title|upper }}</h1>
+<ul>
+    {% for i in context %}
+    <h2>
+        <li>{{ i }}</li>
+    </h2>
+    {% endfor %}
+</ul>
+{% endblock %}
